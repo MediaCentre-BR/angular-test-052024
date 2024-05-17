@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #d87b5f;
+    --secondary-color: #36774b;
+    --tertiary-color: #f795b4;
+    --accent-color: #e9eef3;
+}
+
+body {
+    background-color: var(--accent-color);
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat';
+    border: 0px 0px 0px black;
+    text-decoration: none;
+}
+
+@mixin shadow($size, $opacity) {
+    box-shadow: 0px 0px $size opacify(#00000000, $opacity);
+}
+
+@mixin cardBlock {
+    @include shadow(10px, 0.2);
+    border-radius: 5px;
+    padding: 8px;
+    background-color: white;
+    border: 1px opacify(#00000000, 0.15) solid;
+}

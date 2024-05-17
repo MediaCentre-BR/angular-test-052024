@@ -1,0 +1,45 @@
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+$tertiary-color: var(--tertiary-color);
+
+* {
+    display: block;
+}
+
+@mixin shadow($size, $opacity) {
+    box-shadow: 0px 0px $size opacify(#00000000, $opacity);
+}
+
+@mixin cardBlock {
+    @include shadow(10px, 0.2);
+    border-radius: 5px;
+    padding: 8px;
+    background-color: white;
+    border: 1px opacify(#00000000, 0.15) solid;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brand {
+    @include shadow(10px, 0.3);
+    background-color: white;
+    padding: 6px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    .logo {
+        fill: $primary-color;
+        width: 30px;
+    }
+
+    .name {
+        color: $primary-color;
+        font-weight: bold;
+    }
+}
