@@ -5,7 +5,7 @@ import { ButtonComponent } from '../../components/button/button.component';
   selector: 'app-user-management',
   standalone: true,
   imports: [
-    ButtonComponent
+    ButtonComponent,    
   ],
   templateUrl: './user-management.component.html',
   styleUrl: './user-management.component.scss'

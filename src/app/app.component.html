@@ -1,1 +1,26 @@
-<router-outlet />
+<div>
+  <button class="btn btn-primary">Botão Bootstrap</button>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">Navbar</a>
+    </div>
+  </nav>
+  
+    <h1>{{ title }}</h1>
+    <input [(ngModel)]="searchTerm" placeholder="Search">
+    <button (click)="onSearch()">Search</button>
+    <p *ngIf="result">{{ result }}</p>
+  
+  
+    <router-outlet></router-outlet>
+  </div>
+  
+
+  <ul>
+    <li *ngFor="let user of users">
+      {{ user.id }} - {{ user.name }} - {{user.email}}
+    </li>
+  </ul>
+  
