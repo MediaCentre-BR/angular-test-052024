@@ -8,6 +8,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from './components/button/button.component';
 import { UserManagementComponent } from './modules/user-management/user-management.component';
 import { HttpClient } from '@angular/common/http';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
+
 
 interface User {
   id: number;
@@ -28,6 +31,8 @@ interface User {
     HttpClientModule, 
     ButtonComponent, 
     UserManagementComponent,
+    MatSlideToggleModule,
+
     
     
   ],  
@@ -37,6 +42,8 @@ interface User {
 })
 
 export class AppComponent implements OnInit {
+
+
   title = 'angular-test-052024';
   searchTerm: string = '';
   result: string | null = null;
@@ -44,10 +51,10 @@ export class AppComponent implements OnInit {
 
 
 //Botão Pesquisar
-  onSearch(): void {
-    alert(`Em desenvolvimento!`);
-  }
 
+onSearch(): void {
+  alert(`Em desenvolvimento!`);
+}
   //Botão Editar
   handleButtonEdit(action: string, user: any) {
     alert(`Ação ${action} realizada para o usuário ${user.name}. Em desenvolvimento!`);
@@ -80,6 +87,7 @@ export class AppComponent implements OnInit {
   }
 
 
+  
   toggleDetails(userId: number): void {
     this.expandedUsers[userId] = !this.expandedUsers[userId];
   }
@@ -93,9 +101,8 @@ export class AppComponent implements OnInit {
       this.users = users;
     });
   }
-  
-}
 
+  }
 bootstrapApplication(AppComponent, {
   providers: [DataService] 
 });

@@ -1,5 +1,7 @@
 <body>
 <!-- NavBar-->
+
+
 <app-user-management> </app-user-management>
 
 <!-- Seção Pesquisa e Adicionar Usuário -->
@@ -21,29 +23,36 @@
       <td></td> 
     </li>
     <li *ngFor="let user of users">
-      <td>{{ user.id }}</td> <!-- ID -->
-      <td>{{ user.name }}</td> <!-- Nome -->
-      <div>
-      <td>{{ user.email }}</td> <!-- Email -->
+      <!-- ID -->
+      <td>{{ user.id }}</td> 
+      <!-- Nome -->
+      <td>{{ user.name }}</td> 
+    
+      <div class="column">
+         <!-- Email -->
+      <td>{{ user.email }}</td>
               <!-- Botão Mais -->
       <i class="fa-regular fa-square-plus" (click)="toggleDetails(user.id)"></i> 
     </div>
-      
+
       <td>
         <ul class="moreInfo" *ngIf="expandedUsers[user.id]">
-          <br> 
             <li>Phone: {{ user.phone }}</li>
             <li>Website: {{ user.website }}</li>
+            
         </ul>
       </td>
+
       <td>
 
         <!-- Botão Editar -->          
         <i class="fa-regular fa-pen-to-square" (click)="handleButtonEdit('Editar', user)"></i>
+
         <!-- Botão Excluir -->                   
         <i class="fa-regular fa-trash-can" (click)="handleButtonDelete('Excluir', user)"></i>
       </td>
     </li>
   </ul>
 </div>
+
 </body>

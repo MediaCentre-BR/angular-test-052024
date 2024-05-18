@@ -18,15 +18,14 @@ body {
     margin: 0;
     width: 1350px;
     margin-top: 30px;
-    background-color: whitesmoke;
+    background-color: white;
+    border-collapse: collapse;
   }
 
-
-  
   .table > li {
     display: flex;
     justify-content:space-between;
-    padding: 8px 16px;
+    padding: 3px 8px;
     border-bottom: 5px solid #dee2e6;
   }
   
@@ -80,15 +79,6 @@ body {
     }
 }
 
-.moreInfo {
-  font-size: 10px;
-}
- 
-.user-table th,
-.user-table td {
-  padding: 8px;
-  text-align: left;
-  border-bottom: 10px solid #ddd;
-}
+
 
 }
