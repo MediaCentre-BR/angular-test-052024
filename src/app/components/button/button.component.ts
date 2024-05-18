@@ -9,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class ButtonComponent {
 
+
+  onAdd(): void {
+    alert(`Em desenvolvimento!`);
+  }
 }

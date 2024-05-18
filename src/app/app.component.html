@@ -1,12 +1,12 @@
 <body>
 <!-- NavBar-->
-<router-outlet></router-outlet>
+<app-user-management> </app-user-management>
 
 <!-- Seção Pesquisa e Adicionar Usuário -->
 <div>
     <input [(ngModel)]="searchTerm" placeholder="Nome" class="inputPesquisaNome">
     <button class="btnSearch" (click)="onSearch()">Pesquisar</button>
-   <button class="btn" (click)="onAdd()"> + Adicionar Novo usuário </button>
+  <app-button> </app-button>
   </div>
 
     <ul class="table">

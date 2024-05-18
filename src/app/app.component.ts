@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';  // Adicione isso
+import { FormsModule } from '@angular/forms'; 
 import { DataService } from './services/data/data.service';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; // Necessário para serviços HTTP
+import { HttpClientModule } from '@angular/common/http'; 
+import { ButtonComponent } from './components/button/button.component';
+import { UserManagementComponent } from './modules/user-management/user-management.component';
 
 interface User {
   id: number;
@@ -16,7 +18,13 @@ interface User {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, HttpClientModule],  // Inclua FormsModule aqui
+  imports: [
+    RouterOutlet, 
+    CommonModule, 
+    FormsModule, 
+    HttpClientModule, 
+    ButtonComponent, 
+    UserManagementComponent],  
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [DataService]
@@ -27,10 +35,6 @@ export class AppComponent implements OnInit {
   result: string | null = null;
 
   onSearch(): void {
-    alert(`Em desenvolvimento!`);
-  }
-
-  onAdd(): void {
     alert(`Em desenvolvimento!`);
   }
 
@@ -51,5 +55,5 @@ export class AppComponent implements OnInit {
 }
 
 bootstrapApplication(AppComponent, {
-  providers: [DataService] // Inclua DataService como provider no bootstrapApplication
+  providers: [DataService] 
 });
