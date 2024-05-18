@@ -1,27 +1,30 @@
+<body>
 <!-- NavBar-->
 <router-outlet></router-outlet>
-  
+
 <!-- Seção Pesquisa e Adicionar Usuário -->
-    <input [(ngModel)]="searchTerm" placeholder="Nome">
+<div>
+    <input [(ngModel)]="searchTerm" placeholder="Nome" class="inputPesquisaNome">
     <button class="btn btn-primary" (click)="onSearch()">Pesquisar</button>
-    <button class="btn btn-primary" (click)="onAdd()"> + Adicionar Novo usuário </button>
-  
+   <button class="btn" (click)="onAdd()"> + Adicionar Novo usuário </button>
+  </div>
 
     <ul class="table">
       <li class="thead-dark">
-        <span>#</span>
+        <span>ID</span>
         <span>Nome</span>
         <span>Email</span>
         <span></span>
       </li>
-      <li *ngFor="let user of users">
+      <li *ngFor="let user of users" >
         <th>{{ user.id }}</th>
         <span>{{ user.name }}</span>
         <span>{{ user.email }}</span>
         <span>
-          <i class="fas fa-edit" (click)="handleButtonClick('Editar', user)"></i>
-          <i class="fas fa-trash-alt" (click)="handleButtonClick('Excluir', user)"></i>
+          <i class="fa-regular fa-square-plus"></i>
+          <i class= "fa-regular fa-pen-to-square" (click)="handleButtonClick('Editar', user)"></i>
+          <i class="fa-regular fa-trash-can" (click)="handleButtonClick('Excluir', user)"></i>
         </span>
       </li>
     </ul>
-    
+  </body>
