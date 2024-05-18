@@ -24,7 +24,8 @@ interface User {
     FormsModule, 
     HttpClientModule, 
     ButtonComponent, 
-    UserManagementComponent],  
+    UserManagementComponent,
+  ],  
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [DataService]
