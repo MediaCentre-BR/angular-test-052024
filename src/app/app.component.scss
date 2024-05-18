@@ -76,3 +76,27 @@ body {
   background-color: transparent;
 
 }
+
+
+.btnSearch {
+  position: relative;
+  left: -40px;
+  margin: 10px;
+  background-color: 	#6495ED;
+  justify-content:flex-end;
+  color: white;
+  border-radius: 3px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+:focus,
+  &:hover {
+      background: darken(#5f87b6,7%);
+  }
+  &:active {
+    &:after {
+      width: 200px;
+      height: 200px;
+    }
+}
+}
