@@ -1,0 +1,23 @@
+.table {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .table > li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .thead-dark  {
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(44, 138, 197);
+  }
+  
+  .th {
+    font-weight: bold;
+  }
+  

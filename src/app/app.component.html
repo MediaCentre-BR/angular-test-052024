@@ -1,28 +1,25 @@
-<div>
-  <button class="btn btn-primary">Botão Bootstrap</button>
-
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Navbar</a>
-    </div>
-  </nav>
+<!-- NavBar-->
+<router-outlet></router-outlet>
   
-    <h1>{{ title }}</h1>
-    <input [(ngModel)]="searchTerm" placeholder="Search">
-    <button (click)="onSearch()">Search</button>
-    <p *ngIf="result">{{ result }}</p>
-  
-  
-    <router-outlet></router-outlet>
-  </div>
+<!-- Seção Pesquisa e Adicionar Usuário -->
+    <input [(ngModel)]="searchTerm" placeholder="Nome">
+    <button class="btn btn-primary" (click)="onSearch()">Pesquisar</button>
+    <button class="btn btn-primary"> + Adicionar Novo usuário </button>
   
 
-  <ul>
-    <li *ngFor="let user of users">
-      {{ user.id }} - {{ user.name }} - {{user.email}}
-    </li>
-  </ul>
-  
+    <ul class="table">
+      <li class="thead-dark">
+        <span>#</span>
+        <span>Nome</span>
+        <span>Email</span>
+        <span></span>
+      </li>
+      <li *ngFor="let user of users">
+        <th>{{ user.id }}</th>
+        <span>{{ user.name }}</span>
+        <span>{{ user.email }}</span>
+      </li>
+    </ul>
+    
 
-  TESTE
+  
