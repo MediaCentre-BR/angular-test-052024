@@ -27,12 +27,14 @@ export class AppComponent implements OnInit {
   result: string | null = null;
 
   onSearch(): void {
-    this.result = `Você pesquisou por: ${this.searchTerm}`;
+    alert(`Em desenvolvimento!`);
   }
 
+  onAdd(): void {
+    alert(`Em desenvolvimento!`);
+  }
 
   handleButtonClick(action: string, user: any) {
-    // Exibir alerta
     alert(`Ação ${action} realizada para o usuário ${user.name}. Em desenvolvimento!`);
   }
 

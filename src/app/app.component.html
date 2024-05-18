@@ -4,7 +4,7 @@
 <!-- Seção Pesquisa e Adicionar Usuário -->
     <input [(ngModel)]="searchTerm" placeholder="Nome">
     <button class="btn btn-primary" (click)="onSearch()">Pesquisar</button>
-    <button class="btn btn-primary"> + Adicionar Novo usuário </button>
+    <button class="btn btn-primary" (click)="onAdd()"> + Adicionar Novo usuário </button>
   
 
     <ul class="table">
@@ -25,5 +25,3 @@
       </li>
     </ul>
     
-
-    <i class="fas fa-cog"></i>
