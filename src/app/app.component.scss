@@ -21,16 +21,13 @@ body {
     background-color: whitesmoke;
   }
 
-  .table > ul {
-    padding: 20px;
-  }
+
   
   .table > li {
     display: flex;
-    
-    justify-content: space-between;
+    justify-content:space-between;
     padding: 8px 16px;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 5px solid #dee2e6;
   }
   
   .thead-dark  {
@@ -82,4 +79,16 @@ body {
       height: 200px;
     }
 }
+
+.moreInfo {
+  font-size: 10px;
+}
+ 
+.user-table th,
+.user-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 10px solid #ddd;
+}
+
 }

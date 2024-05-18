@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { User } from '../../models/user'; // Importe a interface User, não o componente UserListComponent
+import { User } from '../../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(): Observable<User[]> { // Corrija o tipo de retorno para Observable<User[]>
+  getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl);
   }
 }
+
