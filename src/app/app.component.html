@@ -1,58 +1,58 @@
 <body>
-<!-- NavBar-->
+  <!-- NavBar-->
 
 
-<app-user-management> </app-user-management>
+  <app-user-management> </app-user-management>
 
-<!-- Seção Pesquisa e Adicionar Usuário -->
-<div>
+  <!-- Seção Pesquisa e Adicionar Usuário -->
+  <div>
     <input [(ngModel)]="searchTerm" placeholder="Nome" class="inputPesquisaNome">
     <button class="btnSearch" (click)="onSearch()">Pesquisar</button>
-  <app-button> </app-button>
+    <app-button> </app-button>
   </div>
 
 
   <!-- Seção Tabela de Usuário -->
-<div class="divTable"> 
-  <ul class="table">
-    <li class="thead-dark">
-      <td>ID</td>
-      <td>Nome</td>
-      <td>Email</td>
-      <td></td>
-      <td></td> 
-    </li>
-    <li *ngFor="let user of users">
-      <!-- ID -->
-      <td>{{ user.id }}</td> 
-      <!-- Nome -->
-      <td>{{ user.name }}</td> 
-    
-      <div class="column">
-         <!-- Email -->
-      <td>{{ user.email }}</td>
-              <!-- Botão Mais -->
-      <i class="fa-regular fa-square-plus" (click)="toggleDetails(user.id)"></i> 
-    </div>
+  <div class="divTable">
+    <ul class="table">
+      <li class="thead-dark">
+        <td>ID</td>
+        <td>Nome</td>
+        <td>Email</td>
+        <td></td>
+        <td></td>
+      </li>
+      <li *ngFor="let user of users">
+        <!-- ID -->
+        <td>{{ user.id }}</td>
+        <!-- Nome -->
+        <td>{{ user.name }}</td>
 
-      <td>
-        <ul class="moreInfo" *ngIf="expandedUsers[user.id]">
+        <div class="column">
+          <!-- Email -->
+          <td>{{ user.email }}</td>
+          <!-- Botão Mais -->
+          <i class="fa-regular fa-square-plus" (click)="toggleDetails(user.id)"></i>
+        </div>
+
+        <td>
+          <ul class="moreInfo" *ngIf="expandedUsers[user.id]">
             <li>Phone: {{ user.phone }}</li>
             <li>Website: {{ user.website }}</li>
-            
-        </ul>
-      </td>
 
-      <td>
+          </ul>
+        </td>
 
-        <!-- Botão Editar -->          
-        <i class="fa-regular fa-pen-to-square" (click)="handleButtonEdit('Editar', user)"></i>
+        <td>
 
-        <!-- Botão Excluir -->                   
-        <i class="fa-regular fa-trash-can" (click)="handleButtonDelete('Excluir', user)"></i>
-      </td>
-    </li>
-  </ul>
-</div>
+          <!-- Botão Editar -->
+          <i class="fa-regular fa-pen-to-square" (click)="handleButtonEdit('Editar', user)"></i>
+
+          <!-- Botão Excluir -->
+          <i class="fa-regular fa-trash-can" (click)="handleButtonDelete('Excluir', user)"></i>
+        </td>
+      </li>
+    </ul>
+  </div>
 
 </body>

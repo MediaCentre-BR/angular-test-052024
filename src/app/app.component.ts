@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { DataService } from './services/data/data.service';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from './components/button/button.component';
 import { UserManagementComponent } from './modules/user-management/user-management.component';
 import { HttpClient } from '@angular/common/http';
@@ -16,7 +16,7 @@ interface User {
   id: number;
   name: string;
   email: string;
-  phone: string;  
+  phone: string;
   website: string
 }
 
@@ -25,17 +25,17 @@ interface User {
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, 
-    CommonModule, 
-    FormsModule, 
-    HttpClientModule, 
-    ButtonComponent, 
+    RouterOutlet,
+    CommonModule,
+    FormsModule,
+    HttpClientModule,
+    ButtonComponent,
     UserManagementComponent,
     MatSlideToggleModule,
 
-    
-    
-  ],  
+
+
+  ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [DataService]
@@ -50,11 +50,11 @@ export class AppComponent implements OnInit {
   expandedUsers: { [key: number]: boolean } = {};
 
 
-//Botão Pesquisar
+  //Botão Pesquisar
 
-onSearch(): void {
-  alert(`Em desenvolvimento!`);
-}
+  onSearch(): void {
+    alert(`Em desenvolvimento!`);
+  }
   //Botão Editar
   handleButtonEdit(action: string, user: any) {
     alert(`Ação ${action} realizada para o usuário ${user.name}. Em desenvolvimento!`);
@@ -87,7 +87,7 @@ onSearch(): void {
   }
 
 
-  
+
   toggleDetails(userId: number): void {
     this.expandedUsers[userId] = !this.expandedUsers[userId];
   }
@@ -95,14 +95,14 @@ onSearch(): void {
   users: User[] = [];
 
   constructor(private dataService: DataService, private http: HttpClient) { }
-  
+
   ngOnInit(): void {
     this.dataService.getUsers().subscribe(users => {
       this.users = users;
     });
   }
 
-  }
+}
 bootstrapApplication(AppComponent, {
-  providers: [DataService] 
+  providers: [DataService]
 });
