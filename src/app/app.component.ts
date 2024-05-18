@@ -30,6 +30,12 @@ export class AppComponent implements OnInit {
     this.result = `Você pesquisou por: ${this.searchTerm}`;
   }
 
+
+  handleButtonClick(action: string, user: any) {
+    // Exibir alerta
+    alert(`Ação ${action} realizada para o usuário ${user.name}. Em desenvolvimento!`);
+  }
+
   users: User[] = [];
 
   constructor(private dataService: DataService) { }

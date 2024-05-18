@@ -18,8 +18,12 @@
         <th>{{ user.id }}</th>
         <span>{{ user.name }}</span>
         <span>{{ user.email }}</span>
+        <span>
+          <i class="fas fa-edit" (click)="handleButtonClick('Editar', user)"></i>
+          <i class="fas fa-trash-alt" (click)="handleButtonClick('Excluir', user)"></i>
+        </span>
       </li>
     </ul>
     
 
-  
+    <i class="fas fa-cog"></i>
