@@ -9,3 +9,10 @@
         backdrop-filter: hue-rotate(-50deg);
     }
 }
+
+
+@mixin tableBlock {
+    @include cardBlock;
+    @apply p-0 bg-white/70;
+    backdrop-filter: None;
+}
