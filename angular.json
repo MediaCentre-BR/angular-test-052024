@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/mixins.scss",
               "src/styles.scss"
             ],
             "scripts": []
