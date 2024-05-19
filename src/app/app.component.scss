@@ -58,24 +58,25 @@ main {
     mix-blend-mode:overlay;
     border-radius: 100%;
     filter: blur(100px);
+    opacity: 90%;
 
     &.g1 {
         left: 4%;
         background-color: #ff8858;
-        opacity: 70%;
+
     }
 
     &.g2 {
         left: 30%;
         background-color: #358f5f;
-        opacity: 70%;
+
     }
 
     &.g3 {
         left: 57%;
         width: 45em;
         background-color: #f15c7f;
-        opacity: 70%;
+
     }
 
 }
