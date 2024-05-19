@@ -1,3 +1,11 @@
-@mixin padding {
-    padding: 4px;
+@mixin cardBlock {
+    @apply shadow-md p-5 bg-white/40 rounded-2xl border-2 border-black/10;
+    backdrop-filter: blur(4px), hue-rotate(0deg);
+    transition: background-color 2s ease, backdrop-filter 0.4s ease;
+
+
+    &:hover {
+        @apply bg-opacity-95;
+        backdrop-filter: hue-rotate(-50deg);
+    }
 }
