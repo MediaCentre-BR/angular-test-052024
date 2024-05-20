@@ -1,0 +1,91 @@
+@import "../../../../mixins.scss";
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.table-body {
+    @include tableBlock;
+    @apply flex justify-center w-[97%] mx-auto overflow-auto;
+
+    table {
+        @apply table-fixed w-full overflow-auto;
+
+    }
+
+    table, th, td {
+        @apply border-collapse p-3 flex-1 text-start overflow-hidden
+        text-ellipsis;
+
+    }
+}
+
+thead th {
+    @apply sticky bg-[var(--secondary-color)] text-white;
+
+}
+
+
+
+
+.skeleton {
+    @apply h-1 w-full;
+    background: linear-gradient(-90deg, #cccccc 25%, #e0e0e0 50%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+
+
+tr {
+    transition: background-color 0.09s ease;
+    @apply text-sm whitespace-nowrap;
+    
+
+    &:hover {
+        @apply bg-[var(--accent-tertiary-color)];
+    }
+
+    & .cell-action {
+        @apply flex justify-center gap-4 xl:justify-between xl:gap-0 ;
+    }
+}
+
+td {
+    svg {
+        @apply h-5 transition-transform;
+
+        &.svg-edit {
+            @apply fill-[var(--secondary-color)];
+        }
+
+        &.svg-delete {
+            @apply fill-red-600;
+        }
+
+        &:hover {
+            @apply cursor-pointer scale-125;
+        }
+    }
+
+    .del-edit-container {
+        @apply flex gap-4;
+    }
+
+    & .details-action {
+        @apply bg-gray-400 p-1 rounded-md transition-transform text-xs;
+
+        &:hover {
+            @apply cursor-pointer scale-105 bg-pink-800 text-white;
+        }
+    }
+}
