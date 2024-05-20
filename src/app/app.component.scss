@@ -20,25 +20,22 @@
     @apply flex fixed w-full h-full overflow-hidden -z-10;
 
     & .bg-gradient {
-        @apply absolute top-24 left-1 mix-blend-overlay rounded-full opacity-90;
-        height: 40em;
-        width: 40em;
+        @apply absolute top-24 left-1 mix-blend-overlay rounded-full opacity-90 h-[40em] w-[40em];
         filter: blur(100px);
     
         &.g1 {
-            @apply bg-[#ff8858];
-            left: 4%;
+            @apply bg-[#ff8858] left-[1%] xl:left-[4%];
+
         }
     
         &.g2 {
-            @apply bg-[#358f5f];
-            left: 30%;
+            @apply bg-[#358f5f] left-[36%] xl:left-[30%];
+
         }
     
         &.g3 {
-            @apply bg-[#f15c7f];
-            left: 57%;
-            width: 45em;
+            @apply bg-[#f15c7f] left-[60%] xl:left-[57%];
+
     
         }
     
