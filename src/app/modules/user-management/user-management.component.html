@@ -14,7 +14,7 @@
             
             </div>
 
-            <button class="common" type="button">
+            <button class="common" type="button" (click)="actionHandler('Criar Usuário')">
                 
                 <svg viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
@@ -35,5 +35,5 @@
         </div>
     </div>
 
-    <app-user-table [userList]="filteredUsersList" (callDeleteUserData)="deleteUser($event)"></app-user-table>
+    <app-user-table [userList]="filteredUsersList" [isReady]="isReady" (callDeleteUserData)="deleteUser($event)" (callEditUserData)="editUser($event)"></app-user-table>
 </section>

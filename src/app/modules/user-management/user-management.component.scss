@@ -3,7 +3,7 @@
 
 .menu {
     @include cardBlock;
-    @apply flex flex-col gap-3 w-[90%] mx-auto;
+    @apply flex flex-col gap-3 w-[98%] xl:w-[90%] mx-auto;
 
     
     

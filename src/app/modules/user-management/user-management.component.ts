@@ -1,7 +1,9 @@
-import { Component, inject } from '@angular/core';
-import { UserTableComponent } from '../../components/user-table/user-table.component';
+import { Component, inject, OnInit } from '@angular/core';
+
 import { User } from '../../models/user.interface';
-import { DataService } from '../../services/data/data.service';
+import { ApiService } from '../../services/api/api.service';
+
+import { UserTableComponent } from '../../components/user-table/user-table/user-table.component';
 
 @Component({
   selector: 'app-user-management',
@@ -12,37 +14,52 @@ import { DataService } from '../../services/data/data.service';
 })
 export class UserManagementComponent {
 
-  dataService: DataService = inject(DataService);
-
   userList: User[] = [];
   filteredUsersList: User[] = [];
+  isReady:boolean = false;
 
-
+  constructor(private apiService: ApiService){}
 
   /**
-   * Busca os dados na API e salva em userList e filteredUsersList.
+   * Pega os dados dos usuários da API no boot.
    */
-  constructor()
-  {
-    this.dataService.getAllUsers().then((userDataList:User[]) => {
-      this.userList = userDataList;
-      this.filteredUsersList = userDataList;
-    })
+  ngOnInit(): void {
+    this.apiService.getUsers().subscribe(
+      (response) => {
+        this.userList = response;
+        this.filteredUsersList = response;
+        this.isReady = true;
+      }
+    )
+  };
 
+
+  actionHandler(action: string)
+  {
+    alert(`Ação: ${action}`);
   }
 
-  
   /**
-   * [NÃO ESTÁ COMPLETO] Deleta um usário com base no parâmetro userId. 
+   * Deleta um usário com base no parâmetro userId. 
+   * 
+   * NÃO DELETA O USUÁRIO NA API, APENAS LOCALMENTE.
    * @param userId - ID do usuário de interesse
    */
-  deleteUser(userId: number) {
+  deleteUser(userId: number): void
+  {
     let newUserList = this.userList.filter(userData => userData.id !== userId);
 
-    console.log('a');
+    this.actionHandler(`Deletar Usuário (Id: ${userId})`)
 
     this.filteredUsersList = newUserList;
     this.userList = newUserList;
+  }
+
+
+
+  editUser(userId: number): void
+  {
+    this.actionHandler(`Editar Usuário (Id: ${userId})`);
   }
 
 
