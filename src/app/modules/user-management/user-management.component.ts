@@ -34,6 +34,12 @@ export class UserManagementComponent {
   };
 
 
+  /**
+   * 
+   * Mostra que tipo de ação o usuário executou.
+   * 
+   * @param action - Nome da ação
+   */
   actionHandler(action: string)
   {
     alert(`Ação: ${action}`);
@@ -56,7 +62,12 @@ export class UserManagementComponent {
   }
 
 
-
+  /**
+   * Função com funcionalidade placeholder.
+   * Chama a função UserManagement.actionHandler()
+   * 
+   * @param userId - ID do usuário de interese.
+   */
   editUser(userId: number): void
   {
     this.actionHandler(`Editar Usuário (Id: ${userId})`);
