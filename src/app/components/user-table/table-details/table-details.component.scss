@@ -1,0 +1,30 @@
+@import "../../../../mixins.scss";
+
+
+.details {
+    @apply grid grid-cols-2 grid-rows-1;
+
+    & .title {
+        @apply font-bold text-[var(--primary-color)] text-xl
+    }
+
+    li {
+        @apply flex gap-3 justify-start p-0.5;
+
+        div {
+            @apply text-wrap;
+        }
+    }
+
+    & .link {
+        @apply text-blue-500 underline
+    }
+}
+
+.details-block {
+    @include cardBlock;
+    @apply bg-white/70 border m-2
+}
+
+
+
