@@ -1,0 +1,33 @@
+<section class="details">
+    <div class="details-block">
+        <span class="title">More Personal Data</span>
+        <div>
+            <ul>
+                <li><strong>Phone Number:</strong> <div>{{user.phone}}</div></li>
+                <li><strong>Website:</strong> <a class="link">{{user.website}}</a></li>
+            </ul>
+            <div class="details-block">
+                <span class="title">Address</span>
+                <ul>
+                    <li><strong>Zipcode:</strong> <div>{{user.address.zipcode}}</div></li>
+                    <li><strong>City:</strong>   <div>{{user.address.city}}</div></li>
+                    <li><strong>Street:</strong> <div>{{user.address.street}}</div></li>
+                    <li><strong>Suite:</strong>  <div>{{user.address.suite}}</div></li>
+                    <br>
+                    <li><strong>Latitute:</strong> <div>{{user.address.geo.lat}}</div></li>
+                    <li><strong>Longitude:</strong> <div>{{user.address.geo.lng}}</div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="details-block">
+        <span class="title">Company</span>
+        <div>
+            <ul>
+                <li><strong>Name:</strong> <div>{{user.company.name}}</div></li>
+                <li><strong>Catch Phrase:</strong> <div>{{user.company.catchPhrase}}</div></li>
+                <li><strong>Business Services:</strong> <div>{{user.company.bs}}</div></li>
+            </ul>
+        </div>
+    </div>
+</section>
